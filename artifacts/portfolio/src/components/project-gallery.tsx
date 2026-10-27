@@ -32,7 +32,7 @@ export function ProjectGallery({ images, name, lang, expanded = false, onExpand 
 
   useEffect(() => {
     if (paused || hovering || reduce || !visible || !pageVisible || images.length < 2) return;
-    const timer = window.setInterval(() => setIndex((current) => (current + 1) % images.length), 5000);
+    const timer = window.setInterval(() => setIndex((current) => (current + 1) % images.length), 1500);
     return () => window.clearInterval(timer);
   }, [paused, hovering, reduce, visible, pageVisible, images.length]);
 
@@ -44,7 +44,7 @@ export function ProjectGallery({ images, name, lang, expanded = false, onExpand 
 
   const image = (
     <img src={asset(images[index])} alt={`${name} — ${ar ? "صورة" : "image"} ${index + 1}`}
-      className={`h-full w-full object-contain ${reduce ? "" : "animate-in fade-in duration-500"}`}
+      className={`h-full w-full object-contain ${reduce ? "" : "animate-in fade-in duration-200"}`}
       key={images[index]} loading="lazy" decoding="async" />
   );
 

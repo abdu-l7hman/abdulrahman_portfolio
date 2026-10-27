@@ -35,7 +35,7 @@ const pdf = (f: string) => ({ label: { ar: "عرض الملف PDF", en: "Open PD
 export const projects: Project[] = [
   {
     id: "ghanatk", cat: ["venture", "ai"], hue: "11 86% 50%",
-    name: { ar: "غناتك", en: "Ghanatk" },
+    name: { ar: "Ghanatk", en: "Ghanatk" },
     role: { ar: "شريك مؤسس ومدير تقني", en: "Co-founder & CTO" },
     tag: { ar: "وساطة عقارية بالذكاء الاصطناعي", en: "AI real-estate brokerage" },
     status: { ar: "نموذج أولي وعرض استثماري", en: "Prototype & business pitch" },
@@ -50,7 +50,7 @@ export const projects: Project[] = [
   },
   {
     id: "ysr", cat: ["venture", "product"], hue: "42 90% 45%",
-    name: { ar: "يسر", en: "YSR" },
+    name: { ar: "YSR", en: "YSR" },
     role: { ar: "مفهوم منصة وعرض استثماري", en: "Marketplace concept & pitch deck" },
     tag: { ar: "سوق أنشطة الأطفال", en: "Kids' activities marketplace" },
     status: { ar: "مفهوم - مدعوم باستبيان 32 وليًّا", en: "Concept - validated with 32 parent responses" },
@@ -65,7 +65,7 @@ export const projects: Project[] = [
   },
   {
     id: "calix", cat: ["ai", "venture"], hue: "172 62% 30%",
-    name: { ar: "كاليكس", en: "C.A.L.I.X" },
+    name: { ar: "C.A.L.I.X", en: "C.A.L.I.X" },
     role: { ar: "مشروع فائز في هاكاثون", en: "Hackathon-winning project" },
     tag: { ar: "مساعد سريري بتقنية RAG", en: "Clinical RAG assistant" },
     status: { ar: "ضمن أفضل 10 مشاريع فائزة في إنجاز سدايا", en: "Top 10 winning projects, SDAIA Enjaz" },
@@ -80,7 +80,7 @@ export const projects: Project[] = [
   },
   {
     id: "taleeq", cat: ["ai", "product"], hue: "228 60% 45%",
-    name: { ar: "طليق", en: "Taleeq" },
+    name: { ar: "Taleeq", en: "Taleeq" },
     role: { ar: "مطوّر iOS - أكاديمية Apple طويق", en: "iOS Developer - Apple x Tuwaiq" },
     tag: { ar: "تطبيق تدريب على النطق بالذكاء الاصطناعي", en: "AI speech-training iOS app" },
     status: { ar: "يوليو - أغسطس 2025", en: "Jul - Aug 2025" },
@@ -94,7 +94,7 @@ export const projects: Project[] = [
   },
   {
     id: "arena", cat: ["ai", "venture"], hue: "350 70% 42%",
-    name: { ar: "أرينا أوس", en: "Arena OS" },
+    name: { ar: "ARENA OS", en: "ARENA OS" },
     role: { ar: "مفهوم - Empowerthon 2030", en: "Concept - Empowerthon 2030" },
     tag: { ar: "ذكاء الملاعب الذكية", en: "Smart-stadium intelligence" },
     status: { ar: "مفهوم هاكاثون", en: "Hackathon concept" },
@@ -108,7 +108,7 @@ export const projects: Project[] = [
   },
   {
     id: "benefit", cat: ["venture"], hue: "95 45% 32%",
-    name: { ar: "بنفت", en: "Benefit" },
+    name: { ar: "Benefit", en: "Benefit" },
     role: { ar: "مع عبدالملك الشنقيطي", en: "With Abdulmalik Alshanqity" },
     tag: { ar: "وجبات مدرسية صحية", en: "Healthy school meals" },
     status: { ar: "مفهوم مسابقة - المركز الرابع من 18 فريقًا", en: "Competition concept - 4th of 18 teams" },
@@ -123,7 +123,7 @@ export const projects: Project[] = [
   },
   {
     id: "mobdi", cat: ["product", "venture"], hue: "262 40% 42%",
-    name: { ar: "مبدع", en: "Mobdi" },
+    name: { ar: "مبدع", en: "مبدع" },
     role: { ar: "منصة تعليمية", en: "Educational platform" },
     tag: { ar: "مواد ومراجعات وشرح طلابي", en: "Materials, revision, student explainers" },
     status: { ar: "منصة تعليمية", en: "Education platform" },
@@ -137,7 +137,7 @@ export const projects: Project[] = [
   },
   {
     id: "malazim", cat: ["product", "venture"], hue: "28 75% 45%",
-    name: { ar: "ملازم علّام", en: "Malazim Allam" },
+    name: { ar: "ملازم علّام", en: "ملازم علّام" },
     role: { ar: "متجر إلكتروني", en: "E-commerce store" },
     tag: { ar: "ملخصات تعليمية", en: "Educational summaries" },
     status: { ar: "متجر على سلة", en: "Live store on Salla" },
