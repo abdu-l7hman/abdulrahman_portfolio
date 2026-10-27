@@ -34,7 +34,8 @@ The public portfolio lives in `artifacts/portfolio`. It is a presentation-first 
 
 ## User preferences
 
-- The user requested an exceptional visual design, a short personal introduction at the beginning, all supplied projects, and Arabic/English language switching.
+- The portfolio is only for entrepreneurial projects. Show the owner's name, exactly two biography paragraphs, and eight projects in this order: Ghanatk, YSR, CALIX, Taleeq, Arena OS, Benefit, Mobdi, Malazim Allam. Remove other sections and projects.
+- Preserve Arabic/English language switching. Each project card should automatically cycle through every page/image in its supplied project file; use all supplied screenshots for screenshot-only projects.
 - Preserve the distinction between completed results, competition concepts, and projected targets. Pitch-deck forecasts must not be represented as achieved outcomes.
 
 ## Gotchas

@@ -35,7 +35,7 @@ const pdf = (f: string) => ({ label: { ar: "عرض الملف PDF", en: "Open PD
 export const projects: Project[] = [
   {
     id: "ghanatk", cat: ["venture", "ai"], hue: "11 86% 50%",
-    name: { ar: "غاناتك", en: "Ghanatk" },
+    name: { ar: "غناتك", en: "Ghanatk" },
     role: { ar: "شريك مؤسس ومدير تقني", en: "Co-founder & CTO" },
     tag: { ar: "وساطة عقارية بالذكاء الاصطناعي", en: "AI real-estate brokerage" },
     status: { ar: "نموذج أولي وعرض استثماري", en: "Prototype & business pitch" },
@@ -65,7 +65,7 @@ export const projects: Project[] = [
   },
   {
     id: "calix", cat: ["ai", "venture"], hue: "172 62% 30%",
-    name: { ar: "C.A.L.I.X", en: "C.A.L.I.X" },
+    name: { ar: "كاليكس", en: "C.A.L.I.X" },
     role: { ar: "مشروع فائز في هاكاثون", en: "Hackathon-winning project" },
     tag: { ar: "مساعد سريري بتقنية RAG", en: "Clinical RAG assistant" },
     status: { ar: "ضمن أفضل 10 مشاريع فائزة في إنجاز سدايا", en: "Top 10 winning projects, SDAIA Enjaz" },
@@ -94,7 +94,7 @@ export const projects: Project[] = [
   },
   {
     id: "arena", cat: ["ai", "venture"], hue: "350 70% 42%",
-    name: { ar: "Arena OS", en: "Arena OS" },
+    name: { ar: "أرينا أوس", en: "Arena OS" },
     role: { ar: "مفهوم - Empowerthon 2030", en: "Concept - Empowerthon 2030" },
     tag: { ar: "ذكاء الملاعب الذكية", en: "Smart-stadium intelligence" },
     status: { ar: "مفهوم هاكاثون", en: "Hackathon concept" },
@@ -108,7 +108,7 @@ export const projects: Project[] = [
   },
   {
     id: "benefit", cat: ["venture"], hue: "95 45% 32%",
-    name: { ar: "بِنفت", en: "Benefit" },
+    name: { ar: "بنفت", en: "Benefit" },
     role: { ar: "مع عبدالملك الشنقيطي", en: "With Abdulmalik Alshanqity" },
     tag: { ar: "وجبات مدرسية صحية", en: "Healthy school meals" },
     status: { ar: "مفهوم مسابقة - المركز الرابع من 18 فريقًا", en: "Competition concept - 4th of 18 teams" },
