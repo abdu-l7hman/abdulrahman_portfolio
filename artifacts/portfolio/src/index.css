@@ -469,27 +469,47 @@ html[dir=rtl] .eyebrow{font-family:'IBM Plex Sans Arabic',sans-serif;letter-spac
   --ring: 216 100% 72%;
 }
 .portfolio-atmosphere {
-  background: radial-gradient(ellipse at 8% 12%, hsl(var(--primary)/.09), transparent 42%),
-    radial-gradient(ellipse at 90% 55%, hsl(var(--primary)/.065), transparent 38%);
+  background: radial-gradient(ellipse at 5% 16%, hsl(var(--primary)/.17), transparent 44%),
+    radial-gradient(ellipse at 94% 53%, hsl(195 85% 66%/.14), transparent 43%),
+    radial-gradient(ellipse at 22% 92%, hsl(245 65% 75%/.10), transparent 45%);
 }
 .glass-header {
-  background: hsl(var(--background)/.72);
-  -webkit-backdrop-filter: blur(22px) saturate(150%);
-  backdrop-filter: blur(22px) saturate(150%);
+  background: linear-gradient(115deg, hsl(var(--card)/.66), hsl(var(--background)/.38));
+  -webkit-backdrop-filter: blur(30px) saturate(185%);
+  backdrop-filter: blur(30px) saturate(185%);
+  box-shadow: inset 0 1px 0 hsl(0 0% 100%/.3), 0 3px 18px hsl(222 47% 8%/.035);
 }
 .glass-panel {
-  background: hsl(var(--card)/.62);
-  box-shadow: inset 0 1px 0 hsl(0 0% 100%/.32), 0 12px 40px -25px hsl(222 47% 8%/.14);
-  -webkit-backdrop-filter: blur(20px) saturate(135%);
-  backdrop-filter: blur(20px) saturate(135%);
+  position: relative;
+  isolation: isolate;
+  background: linear-gradient(145deg, hsl(0 0% 100%/.57), hsl(var(--card)/.23) 50%, hsl(var(--card)/.42));
+  border-color: hsl(0 0% 100%/.68);
+  box-shadow: inset 0 1px 1px hsl(0 0% 100%/.85), inset 1px 0 0 hsl(0 0% 100%/.35),
+    inset 0 -1px 1px hsl(var(--foreground)/.08), 0 14px 38px -18px hsl(222 47% 8%/.16);
+  -webkit-backdrop-filter: blur(32px) saturate(175%);
+  backdrop-filter: blur(32px) saturate(175%);
 }
-.dark .glass-panel { box-shadow: inset 0 1px 0 hsl(0 0% 100%/.08), 0 12px 40px -25px hsl(0 0% 0%/.55); }
+.glass-panel::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: 2;
+  pointer-events: none;
+  border-radius: inherit;
+  box-shadow: inset 1px 1px 0 hsl(0 0% 100%/.45), inset -1px -1px 0 hsl(0 0% 100%/.15);
+}
+.dark .glass-panel {
+  background: linear-gradient(145deg, hsl(220 35% 65%/.15), hsl(var(--card)/.26) 50%, hsl(220 35% 60%/.08));
+  border-color: hsl(220 45% 85%/.18);
+  box-shadow: inset 0 1px 1px hsl(0 0% 100%/.17), inset 1px 0 0 hsl(0 0% 100%/.06), 0 14px 38px -18px hsl(0 0% 0%/.55);
+}
+.dark .glass-panel::after { box-shadow: inset 1px 1px 0 hsl(0 0% 100%/.12), inset -1px -1px 0 hsl(0 0% 100%/.035); }
 .glass-modal {
   background: hsl(var(--background)/.92);
   -webkit-backdrop-filter: blur(30px) saturate(140%);
   backdrop-filter: blur(30px) saturate(140%);
 }
-.glass-button { background: hsl(var(--card)/.55); border: 1px solid hsl(var(--foreground)/.15); transition: background .2s, border-color .2s; }
+.glass-button { background: linear-gradient(145deg, hsl(var(--card)/.75), hsl(var(--card)/.25)); border: 1px solid hsl(var(--foreground)/.15); box-shadow: inset 0 1px 0 hsl(0 0% 100%/.3), 0 2px 8px hsl(222 47% 8%/.05); transition: background .2s, border-color .2s; }
 .glass-button:hover { background: hsl(var(--primary)/.12); border-color: hsl(var(--primary)/.5); }
 .prism-stage { position: relative; width: 100%; height: 100%; perspective: 1600px; perspective-origin: 50% 45%; }
 .prism-rotor { position: absolute; inset: 0; transform-style: preserve-3d; }

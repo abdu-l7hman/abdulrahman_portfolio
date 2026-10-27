@@ -75,7 +75,7 @@ export function ProjectGallery({ images, name, lang, expanded = false, onExpand 
       onBlurCapture={(event) => { if (!event.currentTarget.contains(event.relatedTarget)) setHovering(false); }}
       role="region" aria-roledescription={ar ? "معرض صور" : "carousel"} aria-label={name}>
       {onExpand ? (
-        <button onClick={onExpand} className="block aspect-[16/10] w-full p-4 md:p-6 focus-visible:outline-2 focus-visible:outline-primary"
+        <button onClick={onExpand} className="block aspect-[16/10] w-full p-3 focus-visible:outline-2 focus-visible:outline-primary"
           aria-label={`${ar ? "تكبير صور" : "Expand images of"} ${name}`}>{image}</button>
       ) : (
         <div className={expanded ? "flex h-[min(65dvh,640px)] w-full items-center justify-center p-3 md:p-6" : "aspect-[16/10] p-3"}>{image}</div>

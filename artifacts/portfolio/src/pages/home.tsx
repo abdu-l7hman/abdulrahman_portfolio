@@ -66,19 +66,20 @@ export default function Home() {
               <h2 className="font-display text-4xl md:text-6xl">{ar ? "المشاريع الريادية" : "Entrepreneurial projects"}</h2>
               <span className="font-mono-x pb-2 text-xs text-foreground/45">{String(ventures.length).padStart(2, "0")}</span>
             </div>
-            <div className="mt-12 grid items-start gap-x-8 gap-y-12 md:grid-cols-2">
+            <div className="mt-12 grid grid-cols-1 items-stretch gap-5 sm:grid-cols-2 lg:grid-cols-4">
               {ventures.map((project, i) => (
                 <article key={project.id} data-testid={`card-project-${project.id}`}
-                  className="glass-panel card-lift overflow-hidden rounded-2xl border border-card-border">
+                  className="glass-panel card-lift flex min-w-0 flex-col overflow-hidden rounded-[1.75rem] border border-card-border">
                   <ProjectGallery images={galleries[project.id as keyof typeof galleries]} name={project.name[lang]} lang={lang} onExpand={() => setOpen(project)} />
-                  <div className="p-6 md:p-10">
+                  <div className="flex flex-1 flex-col p-5">
                     <div className="flex items-baseline justify-between gap-4">
-                      <h3 className="font-display text-[2rem] leading-tight">{project.name[lang]}</h3>
+                      <h3 className="font-display min-w-0 text-[1.6rem] leading-tight [overflow-wrap:anywhere]">{project.name[lang]}</h3>
                       <span className="font-mono-x text-xs text-foreground/45">{String(i + 1).padStart(2, "0")}</span>
                     </div>
                     <p className="mt-2 text-[13px] font-medium tracking-wide text-primary">{project.tag[lang]}</p>
                     <p className="mt-4 text-[15px] leading-[1.75] text-foreground/70">{project.summary[lang]}</p>
-                    <button onClick={() => setOpen(project)} className="group mt-7 inline-flex items-center gap-2 border-b border-foreground/25 pb-1 text-sm font-medium transition-colors hover:border-primary hover:text-primary focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-primary">
+                    <div className="flex-1" aria-hidden="true" />
+                    <button onClick={() => setOpen(project)} className="group mt-7 inline-flex self-start items-center gap-2 border-b border-foreground/25 pb-1 text-sm font-medium transition-colors hover:border-primary hover:text-primary focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-primary">
                       {ar ? "استكشف المشروع" : "Explore project"}<ArrowUpRight size={15} className="transition-transform group-hover:-translate-y-0.5 group-hover:translate-x-0.5 rtl:-scale-x-100 rtl:group-hover:-translate-x-0.5" />
                     </button>
                   </div>
