@@ -34,44 +34,48 @@ export default function Home() {
 
   return (
     <div className="min-h-screen overflow-x-clip">
-      <header className="border-b border-foreground/10">
-        <div className="mx-auto flex max-w-6xl items-center justify-between px-5 py-5 md:px-0">
-          <a href="#intro" className="font-display text-lg font-bold">{name}</a>
+      <header className="sticky top-0 z-50 border-b border-foreground/10 bg-background/85 backdrop-blur-md">
+        <div className="mx-auto flex max-w-6xl items-center justify-between px-5 py-4 md:px-10">
+          <a href="#intro" className="flex items-center gap-3 text-[15px] font-medium tracking-tight"><span aria-hidden className="h-2 w-2 rounded-full bg-primary" />{name}</a>
           <button onClick={() => setLang(ar ? "en" : "ar")} data-testid="button-lang"
             aria-label={ar ? "Switch to English" : "التبديل إلى العربية"}
-            className="rounded-full border border-foreground/20 px-5 py-2 text-sm font-semibold transition hover:bg-foreground hover:text-background">
+            className="rounded-full border border-foreground/15 px-4 py-1.5 text-[13px] font-medium transition-colors hover:border-foreground hover:bg-foreground hover:text-background focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-primary">
             {ar ? "EN" : "عربي"}
           </button>
         </div>
       </header>
 
       <main>
-        <section id="intro" className="grid-lines border-b border-foreground/10 px-5 py-16 md:px-10 md:py-24">
+        <section id="intro" className="px-5 pb-20 pt-20 md:px-10 md:pb-28 md:pt-32">
           <div className="mx-auto max-w-6xl">
-            <h1 className="font-display text-[clamp(2.8rem,7vw,6.5rem)] font-extrabold leading-tight tracking-tight">{name}<span className="text-primary">.</span></h1>
-            <div className="mt-8 grid max-w-5xl gap-5 text-lg leading-[1.95] text-foreground/80 md:gap-6 md:text-xl">
+            <h1 className="rise font-display text-[clamp(3.2rem,9vw,7.5rem)] leading-[1.02]">{name}<span className="text-primary">.</span></h1>
+            <div className="rule rise mt-12 md:mt-16" style={{ animationDelay: "120ms" }} />
+            <div className="rise mt-10 grid gap-6 text-[1.05rem] leading-[1.85] text-foreground/75 md:grid-cols-2 md:gap-14 md:text-lg" style={{ animationDelay: "220ms" }}>
               {biography[lang].map((paragraph) => <p key={paragraph}>{paragraph}</p>)}
             </div>
           </div>
         </section>
 
-        <section id="work" className="px-5 py-14 md:px-10 md:py-20">
+        <section id="work" className="border-t border-foreground/10 bg-card/50 px-5 py-20 md:px-10 md:py-28">
           <div className="mx-auto max-w-6xl">
-            <h2 className="font-display text-4xl font-extrabold md:text-6xl">{ar ? "المشاريع الريادية" : "Entrepreneurial projects"}</h2>
-            <div className="mt-10 grid items-start gap-6 md:grid-cols-2">
+            <div className="flex items-end justify-between gap-6 border-b border-foreground/12 pb-6">
+              <h2 className="font-display text-4xl md:text-6xl">{ar ? "المشاريع الريادية" : "Entrepreneurial projects"}</h2>
+              <span className="font-mono-x pb-2 text-xs text-foreground/45">{String(ventures.length).padStart(2, "0")}</span>
+            </div>
+            <div className="mt-12 grid items-start gap-x-8 gap-y-12 md:grid-cols-2">
               {ventures.map((project, i) => (
                 <article key={project.id} data-testid={`card-project-${project.id}`}
-                  className="overflow-hidden rounded-[1.75rem] border border-card-border bg-card">
+                  className="card-lift overflow-hidden rounded-2xl border border-card-border bg-card">
                   <ProjectGallery images={galleries[project.id as keyof typeof galleries]} name={project.name[lang]} lang={lang} onExpand={() => setOpen(project)} />
-                  <div className="p-6 md:p-7">
-                    <div className="flex items-center justify-between gap-4">
-                      <h3 className="font-display text-3xl font-bold">{project.name[lang]}</h3>
+                  <div className="p-6 md:p-10">
+                    <div className="flex items-baseline justify-between gap-4">
+                      <h3 className="font-display text-[2rem] leading-tight">{project.name[lang]}</h3>
                       <span className="font-mono-x text-xs text-foreground/45">{String(i + 1).padStart(2, "0")}</span>
                     </div>
-                    <p className="mt-2 text-sm font-semibold text-primary">{project.tag[lang]}</p>
-                    <p className="mt-4 leading-relaxed text-foreground/75">{project.summary[lang]}</p>
-                    <button onClick={() => setOpen(project)} className="mt-6 inline-flex items-center gap-2 rounded-full border border-foreground/20 px-4 py-2 text-sm font-semibold transition hover:bg-foreground hover:text-background">
-                      {ar ? "استكشف المشروع" : "Explore project"}<ArrowUpRight size={16} className="rtl:-scale-x-100" />
+                    <p className="mt-2 text-[13px] font-medium tracking-wide text-primary">{project.tag[lang]}</p>
+                    <p className="mt-4 text-[15px] leading-[1.75] text-foreground/70">{project.summary[lang]}</p>
+                    <button onClick={() => setOpen(project)} className="group mt-7 inline-flex items-center gap-2 border-b border-foreground/25 pb-1 text-sm font-medium transition-colors hover:border-primary hover:text-primary focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-primary">
+                      {ar ? "استكشف المشروع" : "Explore project"}<ArrowUpRight size={15} className="transition-transform group-hover:-translate-y-0.5 group-hover:translate-x-0.5 rtl:-scale-x-100 rtl:group-hover:-translate-x-0.5" />
                     </button>
                   </div>
                 </article>
@@ -83,24 +87,24 @@ export default function Home() {
 
       <Dialog.Root open={!!open} onOpenChange={(isOpen) => !isOpen && setOpen(null)}>
         <Dialog.Portal>
-          <Dialog.Overlay className="fixed inset-0 z-[80] bg-foreground/75 backdrop-blur-sm" />
-          <Dialog.Content dir={ar ? "rtl" : "ltr"} className="fixed inset-x-3 bottom-3 top-3 z-[90] mx-auto max-w-5xl overflow-y-auto rounded-3xl bg-background shadow-2xl outline-none md:inset-x-6 md:top-8 md:bottom-8">
+          <Dialog.Overlay className="fixed inset-0 z-[80] bg-[hsl(222_47%_10%/.72)] backdrop-blur-sm data-[state=open]:animate-in data-[state=open]:fade-in" />
+          <Dialog.Content dir={ar ? "rtl" : "ltr"} className="fixed inset-x-3 bottom-3 top-3 z-[90] mx-auto max-w-5xl overflow-y-auto rounded-2xl border border-foreground/10 bg-background shadow-[0_30px_80px_-30px_hsl(222_47%_8%/.5)] outline-none data-[state=open]:animate-in data-[state=open]:fade-in data-[state=open]:slide-in-from-bottom-4 duration-300 md:inset-x-6 md:top-8 md:bottom-8">
             {open && (
               <>
-                <div className="flex items-center justify-between gap-4 px-5 py-4 md:px-8">
-                  <Dialog.Title className="font-display text-2xl font-bold">{open.name[lang]}</Dialog.Title>
-                  <Dialog.Close aria-label={ar ? "إغلاق" : "Close"} className="grid h-10 w-10 shrink-0 place-items-center rounded-full border border-foreground/20 hover:bg-muted"><X size={20} /></Dialog.Close>
+                <div className="sticky top-0 z-10 flex items-center justify-between gap-4 border-b border-foreground/10 bg-background/90 px-5 py-4 backdrop-blur-md md:px-8">
+                  <Dialog.Title className="font-display text-3xl">{open.name[lang]}</Dialog.Title>
+                  <Dialog.Close aria-label={ar ? "إغلاق" : "Close"} className="grid h-10 w-10 shrink-0 place-items-center rounded-full border border-foreground/15 transition-colors hover:bg-foreground hover:text-background"><X size={20} /></Dialog.Close>
                 </div>
                 <ProjectGallery key={open.id} images={galleries[open.id as keyof typeof galleries]} name={open.name[lang]} lang={lang} expanded />
-                <div className="p-6 md:p-8">
-                  <p className="text-sm font-semibold text-primary">{open.role[lang]} · {open.status[lang]}</p>
-                  <Dialog.Description className="mt-4 text-lg leading-relaxed text-foreground/80">{open.summary[lang]}</Dialog.Description>
-                  <ul className="mt-5 space-y-3">
-                    {open.details.map((detail) => <li key={detail.en} className="flex gap-3"><span aria-hidden className="mt-2.5 h-1.5 w-1.5 shrink-0 rounded-full bg-primary" /><span className="leading-relaxed text-foreground/75">{detail[lang]}</span></li>)}
+                <div className="p-6 md:p-10">
+                  <p className="eyebrow !text-primary">{open.role[lang]} · {open.status[lang]}</p>
+                  <Dialog.Description className="mt-5 max-w-3xl text-lg leading-[1.8] text-foreground/80">{open.summary[lang]}</Dialog.Description>
+                  <ul className="mt-7 max-w-3xl space-y-3.5">
+                    {open.details.map((detail) => <li key={detail.en} className="flex gap-3"><span aria-hidden className="mt-[0.7rem] h-px w-4 shrink-0 bg-primary" /><span className="leading-relaxed text-foreground/75">{detail[lang]}</span></li>)}
                   </ul>
-                  {(open.files || open.url) && <div className="mt-7 flex flex-wrap gap-3 border-t border-foreground/10 pt-6">
-                    {open.files?.map((file) => <a key={file.href} href={file.href} target="_blank" rel="noreferrer" className="inline-flex items-center gap-2 rounded-full bg-foreground px-5 py-3 font-semibold text-background hover:bg-primary"><FileText size={17} />{file.label[lang]}</a>)}
-                    {open.url && <a href={open.url} target="_blank" rel="noreferrer" className="inline-flex items-center gap-2 rounded-full border border-foreground/20 px-5 py-3 font-semibold hover:bg-muted">{ar ? "زيارة المشروع" : "Visit project"}<ArrowUpRight size={17} /></a>}
+                  {(open.files || open.url) && <div className="mt-9 flex flex-wrap gap-3 border-t border-foreground/10 pt-7">
+                    {open.files?.map((file) => <a key={file.href} href={file.href} target="_blank" rel="noreferrer" className="inline-flex items-center gap-2 rounded-full bg-foreground px-5 py-2.5 text-sm font-medium text-background transition-colors hover:bg-primary"><FileText size={17} />{file.label[lang]}</a>)}
+                    {open.url && <a href={open.url} target="_blank" rel="noreferrer" className="inline-flex items-center gap-2 rounded-full border border-foreground/20 px-5 py-2.5 text-sm font-medium transition-colors hover:border-foreground">{ar ? "زيارة المشروع" : "Visit project"}<ArrowUpRight size={17} /></a>}
                   </div>}
                 </div>
               </>

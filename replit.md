@@ -37,6 +37,7 @@ The public portfolio lives in `artifacts/portfolio`. It is a presentation-first 
 - The portfolio is only for entrepreneurial projects. Show the owner's name, exactly two biography paragraphs, and eight projects in this order: Ghanatk, YSR, CALIX, Taleeq, Arena OS, Benefit, Mobdi, Malazim Allam. Remove other sections and projects.
 - Preserve Arabic/English language switching. Each project card should automatically cycle through every page/image in its supplied project file; use all supplied screenshots for screenshot-only projects.
 - Use original project names exactly as shown in the supplied project files and branding, in both interface languages. Do not translate or invent transliterations of brand names.
+- Apply the uploaded premium-design brief only to visual styling, not its suggested additional sections. The user confirmed keeping the current content only. Use off-white, navy, charcoal, and subtle electric blue with restrained motion; preserve the fast 1.5-second slideshows.
 - Preserve the distinction between completed results, competition concepts, and projected targets. Pitch-deck forecasts must not be represented as achieved outcomes.
 
 ## Gotchas

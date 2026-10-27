@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400;12..96,600;12..96,800&family=IBM+Plex+Sans+Arabic:wght@400;500;700&family=Reem+Kufi:wght@500;700&family=JetBrains+Mono:wght@400;600&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Geist:wght@400;500;600&family=IBM+Plex+Sans+Arabic:wght@300;400;500;600&family=Noto+Kufi+Arabic:wght@500;600;700&family=JetBrains+Mono:wght@400;500&display=swap');
 @import 'tailwindcss';
 @import 'tw-animate-css';
 @plugin "@tailwindcss/typography";
@@ -79,17 +79,17 @@
   --elevate-1: rgba(0, 0, 0, 0.03);
   --elevate-2: rgba(0, 0, 0, 0.08);
 
-  --background: 38 33% 94%;
+  --background: 40 23% 96%;
 
-  --foreground: 228 48% 13%;
+  --foreground: 222 47% 13%;
 
-  --border: 228 20% 82%;
+  --border: 220 16% 86%;
 
-  --card: 40 40% 97%;
+  --card: 40 30% 98.5%;
 
-  --card-foreground: 228 48% 13%;
+  --card-foreground: 222 47% 13%;
 
-  --card-border: 228 20% 84%;
+  --card-border: 220 16% 86%;
 
   --sidebar: 38 30% 92%;
 
@@ -97,7 +97,7 @@
 
   --sidebar-border: 228 20% 82%;
 
-  --sidebar-primary: 11 86% 50%;
+  --sidebar-primary: 218 92% 48%;
 
   --sidebar-primary-foreground: 38 40% 97%;
 
@@ -113,19 +113,19 @@
 
   --popover-border: 228 20% 82%;
 
-  --primary: 11 86% 50%;
+  --primary: 218 92% 48%;
 
   --primary-foreground: 38 40% 97%;
 
-  --secondary: 228 48% 13%;
+  --secondary: 222 47% 13%;
 
   --secondary-foreground: 38 33% 94%;
 
-  --muted: 38 25% 88%;
+  --muted: 220 20% 92%;
 
-  --muted-foreground: 228 15% 38%;
+  --muted-foreground: 220 9% 34%;
 
-  --accent: 172 62% 30%;
+  --accent: 218 92% 48%;
 
   --accent-foreground: 38 40% 97%;
 
@@ -134,14 +134,14 @@
   --destructive-foreground: 38 40% 97%;
 
   --input: 228 20% 78%;
-  --ring: 11 86% 50%;
+  --ring: 218 92% 48%;
   --chart-1: 11 86% 50%;
   --chart-2: 172 62% 30%;
   --chart-3: 228 48% 13%;
   --chart-4: 42 90% 55%;
   --chart-5: 228 20% 60%;
 
-  --app-font-sans: 'Bricolage Grotesque', 'IBM Plex Sans Arabic', sans-serif;
+  --app-font-sans: 'Geist', 'IBM Plex Sans Arabic', sans-serif;
   --app-font-serif: 'Reem Kufi', serif;
   --app-font-mono: 'JetBrains Mono', monospace;
   --radius: 0.5rem; /* 8px */
@@ -228,17 +228,17 @@
   --elevate-1: rgba(255, 255, 255, 0.04);
   --elevate-2: rgba(255, 255, 255, 0.09);
 
-  --background: 38 33% 94%;
+  --background: 40 23% 96%;
 
-  --foreground: 228 48% 13%;
+  --foreground: 222 47% 13%;
 
-  --border: 228 20% 82%;
+  --border: 220 16% 86%;
 
-  --card: 40 40% 97%;
+  --card: 40 30% 98.5%;
 
-  --card-foreground: 228 48% 13%;
+  --card-foreground: 222 47% 13%;
 
-  --card-border: 228 20% 84%;
+  --card-border: 220 16% 86%;
 
   --sidebar: 38 30% 92%;
 
@@ -246,7 +246,7 @@
 
   --sidebar-border: 228 20% 82%;
 
-  --sidebar-primary: 11 86% 50%;
+  --sidebar-primary: 218 92% 48%;
 
   --sidebar-primary-foreground: 38 40% 97%;
 
@@ -262,19 +262,19 @@
 
   --popover-border: 228 20% 82%;
 
-  --primary: 11 86% 50%;
+  --primary: 218 92% 48%;
 
   --primary-foreground: 38 40% 97%;
 
-  --secondary: 228 48% 13%;
+  --secondary: 222 47% 13%;
 
   --secondary-foreground: 38 33% 94%;
 
-  --muted: 38 25% 88%;
+  --muted: 220 20% 92%;
 
-  --muted-foreground: 228 15% 38%;
+  --muted-foreground: 220 9% 34%;
 
-  --accent: 172 62% 30%;
+  --accent: 218 92% 48%;
 
   --accent-foreground: 38 40% 97%;
 
@@ -284,7 +284,7 @@
 
   /* Used as the border around inputs. Dark mode: Should be a border that is light enough to have high contrast when rendered on a --card background. More contrast than standard --border */
   --input: 228 20% 78%;
-  --ring: 11 86% 50%;
+  --ring: 218 92% 48%;
   --chart-1: 11 86% 50%;
   --chart-2: 172 62% 30%;
   --chart-3: 228 48% 13%;
@@ -434,15 +434,17 @@
 }
 
 html{scroll-behavior:smooth;scroll-padding-top:84px}
-html[dir=rtl] body{font-family:'IBM Plex Sans Arabic','Bricolage Grotesque',sans-serif}
-.font-display{font-family:'Bricolage Grotesque','Reem Kufi',sans-serif;font-variation-settings:"opsz" 96}
-html[dir=rtl] .font-display{font-family:'Reem Kufi','IBM Plex Sans Arabic',sans-serif}
-.font-mono-x{font-family:'JetBrains Mono',monospace}
-body::after{content:'';position:fixed;inset:0;pointer-events:none;z-index:60;opacity:.07;mix-blend-mode:multiply;background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='160' height='160'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.9' numOctaves='3'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E")}
-.grid-lines{background-image:linear-gradient(hsl(var(--foreground)/.06) 1px,transparent 1px),linear-gradient(90deg,hsl(var(--foreground)/.06) 1px,transparent 1px);background-size:56px 56px}
-@keyframes marquee{to{transform:translateX(-50%)}}
-.marquee{animation:marquee 38s linear infinite}
-html[dir=rtl] .marquee{animation-direction:reverse}
-@keyframes spin-slow{to{transform:rotate(360deg)}}
-.spin-slow{animation:spin-slow 40s linear infinite}
+body{font-feature-settings:"ss01","cv11";text-rendering:optimizeLegibility}
+::selection{background:hsl(var(--primary)/.18)}
+html[dir=rtl] body{font-family:'IBM Plex Sans Arabic','Geist',sans-serif}
+.font-display{font-family:'Instrument Serif','Noto Kufi Arabic',serif;font-weight:400;letter-spacing:-.015em}
+html[dir=rtl] .font-display{font-family:'Noto Kufi Arabic','IBM Plex Sans Arabic',sans-serif;font-weight:600;letter-spacing:0}
+.font-mono-x{font-family:'JetBrains Mono',monospace;letter-spacing:.04em}
+.eyebrow{font-family:'JetBrains Mono',monospace;font-size:.72rem;letter-spacing:.16em;text-transform:uppercase;color:hsl(var(--muted-foreground))}
+html[dir=rtl] .eyebrow{font-family:'IBM Plex Sans Arabic',sans-serif;letter-spacing:0;font-size:.85rem;text-transform:none}
+.rule{height:1px;background:hsl(var(--foreground)/.12)}
+.card-lift{transition:transform .5s cubic-bezier(.2,.7,.2,1),box-shadow .5s cubic-bezier(.2,.7,.2,1),border-color .3s}
+.card-lift:hover{transform:translateY(-3px);box-shadow:0 1px 2px hsl(222 47% 13%/.04),0 18px 40px -22px hsl(222 47% 13%/.22);border-color:hsl(var(--foreground)/.2)}
+@keyframes rise{from{opacity:0;transform:translateY(14px)}to{opacity:1;transform:none}}
+.rise{animation:rise .9s cubic-bezier(.2,.7,.2,1) both}
 @media (prefers-reduced-motion: reduce){html{scroll-behavior:auto}*,*::before,*::after{animation-duration:.001ms!important;animation-iteration-count:1!important;transition-duration:.001ms!important}}

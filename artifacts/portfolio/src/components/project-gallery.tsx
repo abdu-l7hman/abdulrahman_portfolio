@@ -49,7 +49,7 @@ export function ProjectGallery({ images, name, lang, expanded = false, onExpand 
   );
 
   return (
-    <div ref={element} className="relative bg-[#e7e3dc]" dir="ltr"
+    <div ref={element} className="relative bg-[hsl(220_20%_93%)]" dir="ltr"
       onMouseEnter={() => setHovering(true)} onMouseLeave={() => setHovering(false)}
       onFocusCapture={() => setHovering(true)}
       onBlurCapture={(event) => { if (!event.currentTarget.contains(event.relatedTarget)) setHovering(false); }}
@@ -60,24 +60,24 @@ export function ProjectGallery({ images, name, lang, expanded = false, onExpand 
       ) : (
         <div className={expanded ? "flex h-[min(65dvh,640px)] w-full items-center justify-center p-3 md:p-6" : "aspect-[16/10] p-3"}>{image}</div>
       )}
-      <div className="flex items-center justify-between gap-3 border-t border-foreground/10 bg-background/95 px-4 py-3">
-        <span className="font-mono-x text-xs tabular-nums" aria-live={paused ? "polite" : "off"}>{String(index + 1).padStart(2, "0")} / {String(images.length).padStart(2, "0")}</span>
+      <div className="flex items-center justify-between gap-3 border-t border-foreground/10 bg-card px-4 py-2.5">
+        <span className="font-mono-x text-[11px] tabular-nums text-foreground/55" aria-live={paused ? "polite" : "off"}>{String(index + 1).padStart(2, "0")} / {String(images.length).padStart(2, "0")}</span>
         <div className="flex items-center gap-1">
-          <button onClick={() => move(-1)} aria-label={ar ? "الصورة السابقة" : "Previous image"} className="grid h-9 w-9 place-items-center rounded-full hover:bg-muted focus-visible:outline-2 focus-visible:outline-primary"><ChevronLeft size={18} /></button>
+          <button onClick={() => move(-1)} aria-label={ar ? "الصورة السابقة" : "Previous image"} className="grid h-9 w-9 place-items-center rounded-full text-foreground/70 transition-colors hover:bg-foreground hover:text-background focus-visible:outline-2 focus-visible:outline-primary"><ChevronLeft size={18} /></button>
           <button onClick={() => setPaused(!paused)} aria-pressed={paused}
             aria-label={paused ? (ar ? "تشغيل العرض التلقائي" : "Play slideshow") : (ar ? "إيقاف العرض التلقائي" : "Pause slideshow")}
             disabled={!!reduce} title={reduce ? (ar ? "الحركة التلقائية معطلة حسب إعدادات جهازك" : "Autoplay disabled by your motion preferences") : undefined}
-            className="grid h-9 w-9 place-items-center rounded-full hover:bg-muted disabled:opacity-40 focus-visible:outline-2 focus-visible:outline-primary">
+            className="grid h-9 w-9 place-items-center rounded-full text-foreground/70 transition-colors hover:bg-foreground hover:text-background disabled:opacity-40 focus-visible:outline-2 focus-visible:outline-primary">
             {paused || reduce ? <Play size={15} /> : <Pause size={15} />}
           </button>
-          <button onClick={() => move(1)} aria-label={ar ? "الصورة التالية" : "Next image"} className="grid h-9 w-9 place-items-center rounded-full hover:bg-muted focus-visible:outline-2 focus-visible:outline-primary"><ChevronRight size={18} /></button>
+          <button onClick={() => move(1)} aria-label={ar ? "الصورة التالية" : "Next image"} className="grid h-9 w-9 place-items-center rounded-full text-foreground/70 transition-colors hover:bg-foreground hover:text-background focus-visible:outline-2 focus-visible:outline-primary"><ChevronRight size={18} /></button>
         </div>
       </div>
       {expanded && (
         <div className="flex gap-2 overflow-x-auto border-t border-foreground/10 bg-background p-3">
           {images.map((src, i) => (
             <button key={src} onClick={() => setIndex(i)} aria-label={`${ar ? "عرض الصورة" : "Show image"} ${i + 1}`} aria-current={index === i ? "true" : undefined}
-              className={`h-14 w-20 shrink-0 overflow-hidden rounded-md border-2 ${index === i ? "border-primary" : "border-transparent"}`}>
+              className={`h-14 w-20 shrink-0 overflow-hidden rounded-md border-2 bg-[hsl(220_20%_93%)] transition-colors ${index === i ? "border-primary" : "border-transparent opacity-60 hover:opacity-100"}`}>
               <img src={asset(src)} alt="" loading="lazy" className="h-full w-full object-contain" />
             </button>
           ))}
