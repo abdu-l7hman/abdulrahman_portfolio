@@ -1,0 +1,45 @@
+﻿{
+  "": "https://openapi.vercel.sh/vercel.json",
+  "services": {
+    "portfolio": {
+      "root": "artifacts/portfolio",
+      "framework": "vite",
+      "buildCommand": "pnpm run build",
+      "outputDirectory": "dist/public",
+      "bindings": [
+        {
+          "type": "service",
+          "service": "api-server",
+          "format": "url",
+          "env": "VITE_API_SERVER_URL"
+        }
+      ]
+    },
+    "api-server": {
+      "root": "artifacts/api-server",
+      "buildCommand": "pnpm run build",
+      "installCommand": "pnpm install",
+      "entrypoint": "dist/index.mjs"
+    },
+    "mockup-sandbox": {
+      "root": "artifacts/mockup-sandbox",
+      "framework": "vite",
+      "buildCommand": "pnpm run build",
+      "outputDirectory": "dist"
+    }
+  },
+  "rewrites": [
+    {
+      "source": "/api/(.*)",
+      "destination": {
+        "service": "api-server"
+      }
+    },
+    {
+      "source": "/(.*)",
+      "destination": {
+        "service": "portfolio"
+      }
+    }
+  ]
+}
