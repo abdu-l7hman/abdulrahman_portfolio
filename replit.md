@@ -38,6 +38,7 @@ The public portfolio lives in `artifacts/portfolio`. It is a presentation-first 
 - Preserve Arabic/English language switching. Each project card should automatically cycle through every page/image in its supplied project file; use all supplied screenshots for screenshot-only projects.
 - Use original project names exactly as shown in the supplied project files and branding, in both interface languages. Do not translate or invent transliterations of brand names.
 - Apply the uploaded premium-design brief only to visual styling, not its suggested additional sections. The user confirmed keeping the current content only. Use off-white, navy, charcoal, and subtle electric blue with restrained motion; preserve the fast 1.5-second slideshows.
+- The user requested light/dark modes, glass effects, and smooth image transitions resembling rotation of a rectangular 3D object. Keep these while retaining original names and the limited entrepreneurial-project scope.
 - Preserve the distinction between completed results, competition concepts, and projected targets. Pitch-deck forecasts must not be represented as achieved outcomes.
 
 ## Gotchas

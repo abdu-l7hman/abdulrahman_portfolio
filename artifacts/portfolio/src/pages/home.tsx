@@ -2,6 +2,7 @@ import { useEffect, useState } from "react";
 import { ArrowUpRight, FileText, X } from "lucide-react";
 import * as Dialog from "@radix-ui/react-dialog";
 import { ProjectGallery } from "@/components/project-gallery";
+import { ThemeToggle } from "@/components/theme-toggle";
 import { projects, type Lang, type Project } from "@/data/content";
 import galleries from "@/data/galleries.json";
 
@@ -33,15 +34,18 @@ export default function Home() {
   }, [lang, ar, name]);
 
   return (
-    <div className="min-h-screen overflow-x-clip">
-      <header className="sticky top-0 z-50 border-b border-foreground/10 bg-background/85 backdrop-blur-md">
+    <div className="portfolio-atmosphere min-h-screen overflow-x-clip">
+      <header className="glass-header sticky top-0 z-50 border-b border-foreground/10">
         <div className="mx-auto flex max-w-6xl items-center justify-between px-5 py-4 md:px-10">
           <a href="#intro" className="flex items-center gap-3 text-[15px] font-medium tracking-tight"><span aria-hidden className="h-2 w-2 rounded-full bg-primary" />{name}</a>
+          <div className="flex items-center gap-2">
+          <ThemeToggle lang={lang} />
           <button onClick={() => setLang(ar ? "en" : "ar")} data-testid="button-lang"
             aria-label={ar ? "Switch to English" : "التبديل إلى العربية"}
             className="rounded-full border border-foreground/15 px-4 py-1.5 text-[13px] font-medium transition-colors hover:border-foreground hover:bg-foreground hover:text-background focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-primary">
             {ar ? "EN" : "عربي"}
           </button>
+          </div>
         </div>
       </header>
 
@@ -56,7 +60,7 @@ export default function Home() {
           </div>
         </section>
 
-        <section id="work" className="border-t border-foreground/10 bg-card/50 px-5 py-20 md:px-10 md:py-28">
+        <section id="work" className="border-t border-foreground/10 px-5 py-20 md:px-10 md:py-28">
           <div className="mx-auto max-w-6xl">
             <div className="flex items-end justify-between gap-6 border-b border-foreground/12 pb-6">
               <h2 className="font-display text-4xl md:text-6xl">{ar ? "المشاريع الريادية" : "Entrepreneurial projects"}</h2>
@@ -65,7 +69,7 @@ export default function Home() {
             <div className="mt-12 grid items-start gap-x-8 gap-y-12 md:grid-cols-2">
               {ventures.map((project, i) => (
                 <article key={project.id} data-testid={`card-project-${project.id}`}
-                  className="card-lift overflow-hidden rounded-2xl border border-card-border bg-card">
+                  className="glass-panel card-lift overflow-hidden rounded-2xl border border-card-border">
                   <ProjectGallery images={galleries[project.id as keyof typeof galleries]} name={project.name[lang]} lang={lang} onExpand={() => setOpen(project)} />
                   <div className="p-6 md:p-10">
                     <div className="flex items-baseline justify-between gap-4">
@@ -88,10 +92,10 @@ export default function Home() {
       <Dialog.Root open={!!open} onOpenChange={(isOpen) => !isOpen && setOpen(null)}>
         <Dialog.Portal>
           <Dialog.Overlay className="fixed inset-0 z-[80] bg-[hsl(222_47%_10%/.72)] backdrop-blur-sm data-[state=open]:animate-in data-[state=open]:fade-in" />
-          <Dialog.Content dir={ar ? "rtl" : "ltr"} className="fixed inset-x-3 bottom-3 top-3 z-[90] mx-auto max-w-5xl overflow-y-auto rounded-2xl border border-foreground/10 bg-background shadow-[0_30px_80px_-30px_hsl(222_47%_8%/.5)] outline-none data-[state=open]:animate-in data-[state=open]:fade-in data-[state=open]:slide-in-from-bottom-4 duration-300 md:inset-x-6 md:top-8 md:bottom-8">
+          <Dialog.Content dir={ar ? "rtl" : "ltr"} className="glass-modal fixed inset-x-3 bottom-3 top-3 z-[90] mx-auto max-w-5xl overflow-y-auto rounded-2xl border border-foreground/10 shadow-[0_30px_80px_-30px_hsl(222_47%_8%/.5)] outline-none data-[state=open]:animate-in data-[state=open]:fade-in data-[state=open]:slide-in-from-bottom-4 duration-300 md:inset-x-6 md:top-8 md:bottom-8">
             {open && (
               <>
-                <div className="sticky top-0 z-10 flex items-center justify-between gap-4 border-b border-foreground/10 bg-background/90 px-5 py-4 backdrop-blur-md md:px-8">
+                <div className="glass-header sticky top-0 z-10 flex items-center justify-between gap-4 border-b border-foreground/10 px-5 py-4 md:px-8">
                   <Dialog.Title className="font-display text-3xl">{open.name[lang]}</Dialog.Title>
                   <Dialog.Close aria-label={ar ? "إغلاق" : "Close"} className="grid h-10 w-10 shrink-0 place-items-center rounded-full border border-foreground/15 transition-colors hover:bg-foreground hover:text-background"><X size={20} /></Dialog.Close>
                 </div>
