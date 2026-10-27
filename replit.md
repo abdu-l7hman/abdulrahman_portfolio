@@ -1,6 +1,6 @@
-# [Project name]
+# Bilingual Professional Portfolio
 
-_Replace the heading above with the project's name, and this line with one sentence describing what this app does for users._
+A personal portfolio presenting software engineering, AI research, entrepreneurship, consulting experience, and student leadership in Arabic and English.
 
 ## Run & Operate
 
@@ -30,11 +30,12 @@ _Populate as you build — non-obvious choices a reader couldn't infer from the 
 
 ## Product
 
-_Describe the high-level user-facing capabilities of this app once they exist._
+The public portfolio lives in `artifacts/portfolio`. It is a presentation-first site; it does not need accounts or a database. Project documents and images supplied by the owner support the case studies.
 
 ## User preferences
 
-_Populate as you build — explicit user instructions worth remembering across sessions._
+- The user requested an exceptional visual design, a short personal introduction at the beginning, all supplied projects, and Arabic/English language switching.
+- Preserve the distinction between completed results, competition concepts, and projected targets. Pitch-deck forecasts must not be represented as achieved outcomes.
 
 ## Gotchas
 
